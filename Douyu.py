@@ -55,9 +55,9 @@ class Douyu:
                     time.sleep(3)
                     ele = self.browser.find_element_by_id("switcher_plogin").click()
             time.sleep(3)
-            self.browser.find_element_by_xpath("//*[@id='u']").send_keys("qq_account")
+            self.browser.find_element_by_xpath("//*[@id='u']").send_keys(self.username)
             time.sleep(3)
-            self.browser.find_element_by_xpath("//*[@id='p']").send_keys("qq_password")
+            self.browser.find_element_by_xpath("//*[@id='p']").send_keys(self.password)
             self.browser.find_element_by_xpath("//*[@id='login_button']").click()
             time.sleep(5)
             while (True):
@@ -124,8 +124,8 @@ class Douyu:
 
 
 if __name__ == '__main__':
-    username = u''
-    password = ''
+    username = u'qq_account'
+    password = 'qq_password'
     D = Douyu(G=True,username=username,password=password)
     D._login()
     rooms = ['71771']
